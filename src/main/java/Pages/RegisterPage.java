@@ -21,7 +21,17 @@ public class RegisterPage {
 
 	@FindBy(css = "div>[href=\"https://www.opencart.com/index.php?route=account/register\"]")
 	private WebElement Registerbtn;
-		
+	
+
+	//Getter methods to access objects
+	public WebElement getRegisterbtn() {
+		return Registerbtn;
+	}
+
+	//businness mthds
+	public void Registration() {
+		Registerbtn.click();
+	}
 	
 	
 }
