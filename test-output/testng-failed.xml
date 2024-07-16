@@ -6,6 +6,7 @@
       <class name="Tests.RegisterTest">
         <methods>
           <include name="teardown"/>
+          <include name="tc2"/>
           <include name="setup"/>
           <include name="tc1"/>
         </methods>

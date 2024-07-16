@@ -97,7 +97,7 @@ public class RegisterPage {
 	}
 	
 	
-	public void creatingAccount() {
+	public String creatingAccount() {
 		myaccount.click();
 		register.click();
 		fname.sendKeys("shaik");
@@ -108,7 +108,9 @@ public class RegisterPage {
 		pwdc.sendKeys("subahn@888");
 		subscribe.click();
 		policy.click();
-		submit.click();	
+		submit.click();
+		String act = driver.getTitle();
+		return act ;
 		
 	}
 	
