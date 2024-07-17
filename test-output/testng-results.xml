@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-17T17:41:11 IST" name="Default suite" finished-at="2024-07-17T17:41:26 IST" duration-ms="14386">
+  <suite started-at="2024-07-17T18:06:52 IST" name="Default suite" finished-at="2024-07-17T18:07:05 IST" duration-ms="13356">
     <groups>
     </groups>
-    <test started-at="2024-07-17T17:41:11 IST" name="Default test" finished-at="2024-07-17T17:41:26 IST" duration-ms="14386">
+    <test started-at="2024-07-17T18:06:52 IST" name="Default test" finished-at="2024-07-17T18:07:05 IST" duration-ms="13356">
       <class name="Tests.RegisterTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T17:41:11 IST" name="setup" finished-at="2024-07-17T17:41:16 IST" duration-ms="4381" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T18:06:52 IST" name="setup" finished-at="2024-07-17T18:06:57 IST" duration-ms="5697" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="tc1()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T17:41:16 IST" name="tc1" finished-at="2024-07-17T17:41:18 IST" duration-ms="2086" status="PASS">
+        <test-method signature="tc1()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T18:06:57 IST" name="tc1" finished-at="2024-07-17T18:07:02 IST" duration-ms="4526" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc1 -->
-        <test-method signature="tc2()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T17:41:18 IST" name="tc2" finished-at="2024-07-17T17:41:21 IST" duration-ms="2974" status="PASS">
+        <test-method signature="tc2()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T18:07:02 IST" name="tc2" finished-at="2024-07-17T18:07:05 IST" duration-ms="2797" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc2 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T17:41:21 IST" name="teardown" finished-at="2024-07-17T17:41:26 IST" duration-ms="4885" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.RegisterTest@69e153c5]" started-at="2024-07-17T18:07:05 IST" name="teardown" finished-at="2024-07-17T18:07:05 IST" duration-ms="283" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
