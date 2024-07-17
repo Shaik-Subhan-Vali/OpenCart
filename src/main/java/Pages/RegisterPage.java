@@ -1,121 +1,107 @@
 package Pages;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.Random;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class RegisterPage {
-	
-	//Web driver constructor
-    WebDriver driver;
-	
-	public RegisterPage(WebDriver driver) 
-	{
-		this.driver =driver;
-		PageFactory.initElements(driver, this);
-
+    
+    private String em; // Variable to store generated email
+    private WebDriver driver;
+    
+    // Constructor to initialize WebDriver and generate email
+    public RegisterPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+        generateAndSetEmail(); // Generate email during object creation
     }
-	
-	//objects & getter methods for Register page
+    
+    // WebElement declarations using @FindBy
+    
+    @FindBy(css = "[class=\"dropdown\"] [class=\"hidden-xs hidden-sm hidden-md\"]")
+    private WebElement myaccount;
+    
+    @FindBy(css = "[href=\"https://tutorialsninja.com/demo/index.php?route=account/register\"]")
+    private WebElement register;
+    
+    @FindBy(id = "input-firstname")
+    private WebElement fname;
+    
+    @FindBy(id = "input-lastname")
+    private WebElement lname;
+    
+    @FindBy(id = "input-email")
+    private WebElement email;
+    
+    @FindBy(id = "input-telephone")
+    private WebElement telephone;
+    
+    @FindBy(id = "input-password")
+    private WebElement pwd;
+    
+    @FindBy(id = "input-confirm")
+    private WebElement pwdc;
+    
+    @FindBy(css = "[name=\"newsletter\"][value=\"1\"]")
+    private WebElement subscribe;
+    
+    @FindBy(css = "[name=\"agree\"]")
+    private WebElement policy;
+    
+    @FindBy(css = "[class=\"btn btn-primary\"]")
+    private WebElement submit;
+    
+    // Method to generate a random string of given length
+    private String generateRandomString(int length) {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder sb = new StringBuilder(length);
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            sb.append(characters.charAt(random.nextInt(characters.length())));
+        }
+        return sb.toString();
+    }
+    
+    // Method to generate email and store in 'em'
+    private void generateAndSetEmail() {
+        String randomString = generateRandomString(5);
+        em = randomString + "@gmail.com";
+    }
+    
+    // Getter method to retrieve generated email
+    public String getEm() {
+        return em;
+    }
+    
+    
+    
+    // Method to perform account registration using generated email
+    public String[] creatingAccount() throws IOException {
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream("C:\\Users\\subha\\Documents\\workspace-spring-tool-suite-4-4.22.1.RELEASE\\OpenCart\\src\\test\\resources\\config.properties");
+        prop.load(fis);
+        
+        myaccount.click();
+        register.click();
+        fname.sendKeys(prop.getProperty("firstname"));
+        lname.sendKeys(prop.getProperty("lastname"));
+        email.sendKeys(em); // Use the generated email
+        String x = em ;
+        telephone.sendKeys(prop.getProperty("telephone"));
+        pwd.sendKeys(prop.getProperty("password"));
+        pwdc.sendKeys(prop.getProperty("confirm_password"));
+        subscribe.click();
+        policy.click();
+        submit.click();
+        
+        String act = driver.getTitle();
+        return new String[]{act, x};
  
-	@FindBy( css = "[class=\"dropdown\"] [class=\"hidden-xs hidden-sm hidden-md\"]")
-	private WebElement myaccount;
-
-	public WebElement getMyaccount() {
-		return myaccount;
-	}
-	
-	@FindBy( css = "[href=\"https://tutorialsninja.com/demo/index.php?route=account/register\"]")
-	private WebElement register;
-
-	public WebElement registration() {
-		return register;
-	}
-	
-	@FindBy( id = "input-firstname")
-	private WebElement fname;
-
-	public WebElement firstname() {
-		return fname;
-	}
-	
-	@FindBy( id = "input-lastname")
-	private WebElement lname;
-
-	public WebElement lastname() {
-		return lname;
-	}
-	
-	@FindBy( id = "input-email")
-	private WebElement email;
-
-	public WebElement Email() {
-		return email;
-	}
-	
-	@FindBy( id = "input-telephone")
-	private WebElement telephone;
-
-	public WebElement Telephone() {
-		return telephone;
-	}
-	
-	@FindBy( id = "input-password")
-	private WebElement pwd;
-
-	public WebElement password() {
-		return pwd;
-	}
-	
-	@FindBy( id = "input-confirm")
-	private WebElement pwdc;
-
-	public WebElement confirm() {
-		return pwdc;
-	}
-	
-	@FindBy( css = "[name=\"newsletter\"][value=\"1\"]")
-	private WebElement subscribe;
-
-	public WebElement Subscribe() {
-		return subscribe;
-	}
-	
-	@FindBy( css = "[name=\"agree\"]")
-	private WebElement policy;
-
-	public WebElement agree() {
-		return policy;
-	}
-	@FindBy( css = "[class=\"btn btn-primary\"]")
-	private WebElement submit;
-
-	public WebElement continuebtn() {
-		return submit;
-	}
-	
-	
-	public String creatingAccount() {
-		myaccount.click();
-		register.click();
-		fname.sendKeys("shaik");
-		lname.sendKeys("subhan");
-		email.sendKeys("subhan77@gmail.com");
-		telephone.sendKeys("9876543210");
-		pwd.sendKeys("subahn@888");
-		pwdc.sendKeys("subahn@888");
-		subscribe.click();
-		policy.click();
-		submit.click();
-		String act = driver.getTitle();
-		return act ;
-		
-	}
-	
-
-	
-	
+    }
 }
-

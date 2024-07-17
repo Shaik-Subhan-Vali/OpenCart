@@ -1,5 +1,9 @@
 package Pages;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,79 +11,62 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-	//Web driver constructor
-    WebDriver driver;
-	
-	public LoginPage(WebDriver driver) 
-	{
-		this.driver =driver;
-		PageFactory.initElements(driver, this);
+    private WebDriver driver;
 
+    // WebElement declarations using @FindBy
+
+    @FindBy(css = "[class=\"dropdown\"] [class=\"hidden-xs hidden-sm hidden-md\"]")
+    private WebElement myaccount;
+
+    @FindBy(css = "[class=\"dropdown-menu dropdown-menu-right\"] [href=\"https://tutorialsninja.com/demo/index.php?route=account/login\"]")
+    private WebElement login;
+
+    @FindBy(id = "input-email")
+    private WebElement email;
+
+    @FindBy(id = "input-password")
+    private WebElement pwd;
+
+    @FindBy(css = "[value=\"Login\"]")
+    private WebElement loginbtn;
+
+    @FindBy(css = "[class=\"dropdown-menu dropdown-menu-right\"] [href=\"https://tutorialsninja.com/demo/index.php?route=account/logout\"]")
+    private WebElement logoutbtn;
+
+    @FindBy(css = "[class=\"btn btn-primary\"]")
+    private WebElement continuebtn;
+
+    // Constructor to initialize WebDriver and PageFactory
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-	
-	//Object repository and getter methods
-	@FindBy( css = "[class=\"dropdown\"] [class=\"hidden-xs hidden-sm hidden-md\"]")
-	private WebElement myaccount;
 
-	public WebElement getMyaccount() {
-		return myaccount;
-	}
-	
-	@FindBy( css = "[class=\"dropdown-menu dropdown-menu-right\"] [href=\"https://tutorialsninja.com/demo/index.php?route=account/login\"]")
-	private WebElement login;
+    // Method to perform login using the generated email
+    public String[] logging_in(String em) throws IOException {
+        myaccount.click();
+        logoutbtn.click();
+        continuebtn.click();
 
-	public WebElement getLogin() {
-		return login;
-	}
-	
-	@FindBy( id = "input-email")
-	private WebElement email;
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream("C:\\Users\\subha\\Documents\\workspace-spring-tool-suite-4-4.22.1.RELEASE\\OpenCart\\src\\test\\resources\\config.properties");
+        prop.load(fis);
 
-	public WebElement Email() {
-		return email;
-	}
-	
-	@FindBy( id = "input-password")
-	private WebElement pwd;
+        myaccount.click();
+        login.click();
 
-	public WebElement password() {
-		return pwd;
-	}
-	@FindBy( css = "[value=\"Login\"]")
-	private WebElement loginbtn;
+        email.sendKeys(em);
+        pwd.sendKeys(prop.getProperty("password"));
+        loginbtn.click();
 
-	public WebElement Log() {
-		return loginbtn;
-	}
-	@FindBy( css = "[class=\"dropdown-menu dropdown-menu-right\"] [href=\"https://tutorialsninja.com/demo/index.php?route=account/logout\"]")
-	private WebElement logoutbtn;
+        String act1 = driver.getTitle();
 
-	public WebElement Logout() {
-		return logoutbtn;
-	}
-	@FindBy( css = "[class=\"btn btn-primary\"]")
-	private WebElement continuebtn;
+        myaccount.click();
+        logoutbtn.click();
+        continuebtn.click();
 
-	public WebElement cont() {
-		return continuebtn;
-	}
-	
-	//Business methods
-	
-	public String[] logging_in() {
-		
-		myaccount.click();
-		login.click();
-		email.sendKeys("");
-		pwd.sendKeys("");
-		login.click();
-		String act1 = driver.getTitle();
-		myaccount.click();
-		logoutbtn.click();
-		continuebtn.click();
-		String act2 = driver.getTitle();
-		return new String[] { act1, act2 };
-		
-	}
+        String act2 = driver.getTitle();
 
+        return new String[]{act1, act2};
+    }
 }
