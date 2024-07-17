@@ -1,44 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="2" failed="1" skipped="1">
+<testng-results ignored="0" total="4" passed="1" failed="2" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-17T20:06:25 IST" name="Parallel Tests" finished-at="2024-07-17T20:06:35 IST" duration-ms="9716">
+  <suite started-at="2024-07-17T20:36:01 IST" name="Parallel Tests" finished-at="2024-07-17T20:36:13 IST" duration-ms="11956">
     <groups>
     </groups>
-    <test started-at="2024-07-17T20:06:25 IST" name="Chrome Test" finished-at="2024-07-17T20:06:35 IST" duration-ms="9695">
+    <test started-at="2024-07-17T20:36:01 IST" name="Firefox Test" finished-at="2024-07-17T20:36:12 IST" duration-ms="11242">
       <class name="Tests.RegisterTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:06:25 IST" name="setup" finished-at="2024-07-17T20:06:28 IST" duration-ms="3094" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="tc1()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:06:28 IST" name="tc1" finished-at="2024-07-17T20:06:31 IST" duration-ms="2380" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc1 -->
-        <test-method signature="tc2()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:06:31 IST" name="tc2" finished-at="2024-07-17T20:06:34 IST" depends-on-methods="Tests.RegisterTest.tc1" duration-ms="2980" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc2 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:06:34 IST" name="teardown" finished-at="2024-07-17T20:06:34 IST" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="finish()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:06:34 IST" name="finish" finished-at="2024-07-17T20:06:35 IST" duration-ms="1177" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- finish -->
-      </class> <!-- Tests.RegisterTest -->
-    </test> <!-- Chrome Test -->
-    <test started-at="2024-07-17T20:06:25 IST" name="Firefox Test" finished-at="2024-07-17T20:06:35 IST" duration-ms="9716">
-      <class name="Tests.RegisterTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:06:25 IST" name="setup" finished-at="2024-07-17T20:06:32 IST" duration-ms="7267" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:36:01 IST" name="setup" finished-at="2024-07-17T20:36:08 IST" duration-ms="6982" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -49,25 +18,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="tc1()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:06:32 IST" name="tc1" finished-at="2024-07-17T20:06:35 IST" duration-ms="2402" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
+        <test-method signature="tc1()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:36:08 IST" name="tc1" finished-at="2024-07-17T20:36:10 IST" duration-ms="2090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc1 -->
+        <test-method signature="tc2()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:36:10 IST" name="tc2" finished-at="2024-07-17T20:36:12 IST" depends-on-methods="Tests.RegisterTest.tc1" duration-ms="2085" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[Tried to run command without establishing a connection
+              <![CDATA[Browsing context has been discarded
 Build info: version: '4.20.0', revision: '866c76ca80'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [197c54b6-0266-4411-911c-ecc482b7a6a7, findElement {value=[name="agree"], using=css selector}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 127.0.2, moz:accessibilityChecks: false, moz:buildID: 20240624183754, moz:debuggerAddress: 127.0.0.1:47391, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 14392, moz:profile: C:\Users\subha\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:47391/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 197c54b6-0266-4411-911c-ecc482b7a6a7]]>
+Command: [fafd6505-5cd3-4718-a30f-9d2c11ab9c5e, findElement {using=id, value=input-email}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 127.0.2, moz:accessibilityChecks: false, moz:buildID: 20240624183754, moz:debuggerAddress: 127.0.0.1:18592, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 16264, moz:profile: C:\Users\subha\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:18592/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: fafd6505-5cd3-4718-a30f-9d2c11ab9c5e]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
 Build info: version: '4.20.0', revision: '866c76ca80'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [197c54b6-0266-4411-911c-ecc482b7a6a7, findElement {value=[name="agree"], using=css selector}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 127.0.2, moz:accessibilityChecks: false, moz:buildID: 20240624183754, moz:debuggerAddress: 127.0.0.1:47391, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 14392, moz:profile: C:\Users\subha\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:47391/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 197c54b6-0266-4411-911c-ecc482b7a6a7
+Command: [fafd6505-5cd3-4718-a30f-9d2c11ab9c5e, findElement {using=id, value=input-email}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 127.0.2, moz:accessibilityChecks: false, moz:buildID: 20240624183754, moz:debuggerAddress: 127.0.0.1:18592, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 16264, moz:profile: C:\Users\subha\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:18592/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: fafd6505-5cd3-4718-a30f-9d2c11ab9c5e
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -84,9 +57,9 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-at Pages.RegisterPage.creatingAccount(RegisterPage.java:100)
-at Tests.RegisterTest.tc1(RegisterTest.java:23)
+at jdk.proxy2/jdk.proxy2.$Proxy12.sendKeys(Unknown Source)
+at Pages.LoginPage.logging_in(LoginPage.java:58)
+at Tests.RegisterTest.tc2(RegisterTest.java:35)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -109,19 +82,165 @@ at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecut
 at java.base/java.lang.Thread.run(Thread.java:1623)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc2 -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:36:12 IST" name="teardown" finished-at="2024-07-17T20:36:12 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="finish()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:36:12 IST" name="finish" finished-at="2024-07-17T20:36:12 IST" duration-ms="10" status="FAIL">
+          <exception class="org.openqa.selenium.remote.http.ConnectionFailedException">
+            <message>
+              <![CDATA[JdkWebSocket initial request execution error
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: FirefoxDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.http.ConnectionFailedException: JdkWebSocket initial request execution error
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: FirefoxDriver
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.openSocket(JdkHttpClient.java:243)
+at org.openqa.selenium.devtools.Connection.<init>(Connection.java:87)
+at org.openqa.selenium.firefox.FirefoxDriver.maybeGetDevTools(FirefoxDriver.java:335)
+at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:426)
+at org.openqa.selenium.firefox.FirefoxDriver.quit(FirefoxDriver.java:393)
+at generics.BaseTest.finish(BaseTest.java:71)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:644)
+at org.testng.TestRunner.afterRun(TestRunner.java:914)
+at org.testng.TestRunner.run(TestRunner.java:605)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.net.ConnectException
+at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1053)
+at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:224)
+at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:259)
+at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:235)
+at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:208)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:210)
+... 9 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.http.ConnectionFailedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finish -->
+      </class> <!-- Tests.RegisterTest -->
+    </test> <!-- Firefox Test -->
+    <test started-at="2024-07-17T20:36:01 IST" name="Chrome Test" finished-at="2024-07-17T20:36:13 IST" duration-ms="11956">
+      <class name="Tests.RegisterTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:36:01 IST" name="setup" finished-at="2024-07-17T20:36:05 IST" duration-ms="4145" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="tc1()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:36:05 IST" name="tc1" finished-at="2024-07-17T20:36:13 IST" duration-ms="7762" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ceb869137d1c74421609204f020fe812, findElement {using=css selector, value=[href="https://tutorialsninja.com/demo/index.php?route=account/register"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\subha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62677}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62677/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ceb869137d1c74421609204f020fe812]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ceb869137d1c74421609204f020fe812, findElement {using=css selector, value=[href="https://tutorialsninja.com/demo/index.php?route=account/register"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\subha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62677}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62677/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ceb869137d1c74421609204f020fe812
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
+at Pages.RegisterPage.creatingAccount(RegisterPage.java:91)
+at Tests.RegisterTest.tc1(RegisterTest.java:25)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1623)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc1 -->
-        <test-method signature="tc2()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:06:35 IST" name="tc2" finished-at="2024-07-17T20:06:35 IST" depends-on-methods="Tests.RegisterTest.tc1" duration-ms="0" status="SKIP">
+        <test-method signature="tc2()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:36:13 IST" name="tc2" finished-at="2024-07-17T20:36:13 IST" depends-on-methods="Tests.RegisterTest.tc1" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method Tests.RegisterTest.tc2() on instance Tests.RegisterTest@7e07db1f depends on not successfully finished methods 
-[Tests.RegisterTest.tc1() on instance Tests.RegisterTest@7e07db1f]]]>
+              <![CDATA[Method Tests.RegisterTest.tc2() on instance Tests.RegisterTest@4d9e68d0 depends on not successfully finished methods 
+[Tests.RegisterTest.tc1() on instance Tests.RegisterTest@4d9e68d0]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method Tests.RegisterTest.tc2() on instance Tests.RegisterTest@7e07db1f depends on not successfully finished methods 
-[Tests.RegisterTest.tc1() on instance Tests.RegisterTest@7e07db1f]
+              <![CDATA[java.lang.Throwable: Method Tests.RegisterTest.tc2() on instance Tests.RegisterTest@4d9e68d0 depends on not successfully finished methods 
+[Tests.RegisterTest.tc1() on instance Tests.RegisterTest@4d9e68d0]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -141,15 +260,15 @@ at java.base/java.lang.Thread.run(Thread.java:1623)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc2 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:06:35 IST" name="teardown" finished-at="2024-07-17T20:06:35 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:36:13 IST" name="teardown" finished-at="2024-07-17T20:36:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="finish()[pri:0, instance:Tests.RegisterTest@7e07db1f]" started-at="2024-07-17T20:06:35 IST" name="finish" finished-at="2024-07-17T20:06:35 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="finish()[pri:0, instance:Tests.RegisterTest@4d9e68d0]" started-at="2024-07-17T20:36:13 IST" name="finish" finished-at="2024-07-17T20:36:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finish -->
       </class> <!-- Tests.RegisterTest -->
-    </test> <!-- Firefox Test -->
+    </test> <!-- Chrome Test -->
   </suite> <!-- Parallel Tests -->
 </testng-results>

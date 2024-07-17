@@ -15,4 +15,18 @@
       </class> <!-- Tests.RegisterTest -->
     </classes>
   </test> <!-- Firefox Test(failed) -->
+  <test thread-count="2" parallel="tests" name="Chrome Test(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="Tests.RegisterTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="tc2"/>
+          <include name="finish"/>
+          <include name="setup"/>
+          <include name="tc1"/>
+        </methods>
+      </class> <!-- Tests.RegisterTest -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
 </suite> <!-- Failed suite [Parallel Tests] -->
