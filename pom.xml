@@ -42,10 +42,10 @@
     <version>5.2.2</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
-    <version>4.0.9</version>
+    <version>5.0.7</version> <!-- Replace with the latest stable version -->
 </dependency>
+
     </dependencies>
 </project>
