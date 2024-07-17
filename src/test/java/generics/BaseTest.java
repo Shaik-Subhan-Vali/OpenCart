@@ -1,26 +1,30 @@
 package generics;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
-
+import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+
 public class BaseTest {
 	
 	protected WebDriver driver;
-	String URL = "https://tutorialsninja.com/demo/index.php?route=common/home";
+	String URL;
 	
 	@BeforeTest
 	public void setup() throws IOException, InterruptedException {
 		
-		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
+		Properties pr = new  Properties();
+		FileInputStream fis = new FileInputStream("C:\\Users\\subha\\Documents\\workspace-spring-tool-suite-4-4.22.1.RELEASE\\OpenCart\\src\\test\\resources\\config.properties");
+		pr.load(fis);
+		URL = pr.getProperty("URL");
 		driver.get(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
