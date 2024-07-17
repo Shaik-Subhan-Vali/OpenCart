@@ -8,6 +8,8 @@
           <include name="teardown"/>
           <include name="tc2"/>
           <include name="setup"/>
+          <include name="sampleTest"/>
+          <include name="tc1"/>
         </methods>
       </class> <!-- Tests.RegisterTest -->
     </classes>

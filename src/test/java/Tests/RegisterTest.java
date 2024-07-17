@@ -16,7 +16,9 @@ public class RegisterTest extends BaseTest{
 	LoginPage LP;
 	public String em;
 	
-	@Test
+	//mvn clean test -Dsurefire.suiteXmlFiles=C:\Users\subha\Documents\workspace-spring-tool-suite-4-4.22.1.RELEASE\OpenCart\src\test\resources\parallel.xml
+	
+	@Test(priority = 0)
 	public void tc1() throws IOException  {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		RP = new RegisterPage(driver);
@@ -26,10 +28,10 @@ public class RegisterTest extends BaseTest{
 		 em = act[1];
 	}
 	
-	@Test
+	@Test(dependsOnMethods = "tc1")
 	 public void tc2() throws IOException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        LP = new LoginPage(driver); // Initialize LoginPage correctly
+        LP = new LoginPage(driver); 
         String[] act = LP.logging_in(em);
         String exp1 = "My Account";
         String exp2 = "Your Store";
@@ -37,3 +39,5 @@ public class RegisterTest extends BaseTest{
         Assert.assertEquals(exp2, act[1]);
     }
 }
+
+

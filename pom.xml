@@ -3,6 +3,22 @@
   <groupId>OpenCart</groupId>
   <artifactId>OpenCart</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <plugins>
+        <!-- Maven Surefire Plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version> <!-- Replace with the latest version -->
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> <!-- Path to your testng.xml -->
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
    <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
